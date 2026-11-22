@@ -1,0 +1,45 @@
+NEXOBOT WEB — RÚBRICA N8N
+========================
+Archivos:
+- index.html: estructura de la página (HTML).
+- styles.css: diseño adaptable a celular (CSS).
+- chat.js: integración del chatbot mediante JavaScript de n8n.
+
+CÓMO PROBARLO
+1. Abre CMD y ejecuta: n8n start
+2. Verifica en http://localhost:5678 que el workflow NexoBot esté Published.
+3. Abre la carpeta NexoBot-Web en Visual Studio Code.
+4. Instala la extensión Live Server si no la tienes.
+5. Clic derecho sobre index.html > Open with Live Server.
+6. La web debe abrirse en http://127.0.0.1:5500 o http://localhost:5500.
+7. Si usa 127.0.0.1:5500, modifica en el Chat Trigger > Allowed Origins (CORS)
+   a http://127.0.0.1:5500 o abre explícitamente http://localhost:5500.
+8. Haz clic en el botón flotante de chat y prueba una pregunta sobre NexoVolt.
+
+IMPORTANTE
+- El webhook ya está incluido en chat.js.
+- La página usa CDN externos para fuentes y el widget de n8n; requiere Internet.
+- El chat requiere que n8n siga abierto y ejecutándose en tu computadora.
+- Esta es una página de DEMOSTRACIÓN ACADÉMICA, no un catálogo real con precios o stock.
+- No coloques claves API en archivos HTML o JS; la clave se guarda en credenciales de n8n.
+- localhost no funcionará para visitantes de Base44. Para producción se necesita
+  desplegar n8n con HTTPS público y ajustar webhookUrl y CORS al dominio real.
+
+ENTREGABLES DE LA RÚBRICA
+1. Captura del workflow n8n: Chat Trigger -> AI Agent + Gemini + Simple Memory.
+2. Captura del chatbot respondiendo dentro de esta página web.
+3. Código HTML de la página: index.html (adjuntar también CSS y JS como proyecto).
+
+ACTUALIZACIÓN: ENLACES CLICABLES
+- chat.js detecta URL http/https y enlaces Markdown en los mensajes de NexoBot.
+- Los enlaces se abren en una pestaña nueva y usan rel=noopener noreferrer.
+- styles.css aplica un estilo visible a los enlaces.
+- Recarga la página con Ctrl+F5 para probar la versión actualizada.
+
+
+ACTUALIZACIÓN CHAT RESPONSIVE
+- Se conserva allowFileUploads: true y los tipos MIME en chat.js.
+- El widget usa .chat-layout como estructura fija y .chat-body como único historial desplazable.
+- .chat-footer permanece fuera del scroll; los botones oficiales .chat-input-file-button y
+  .chat-input-send-button se mantienen visibles.
+- Para probar cambios CSS, recarga con Ctrl+F5.
